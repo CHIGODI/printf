@@ -11,7 +11,19 @@
 
 
 #define BUFFER_SIZE 1024
+/**
+ * struct case_fmt - Mapping between format specifiers and handling functions.
+ * @ch: The character representing a format specifier.
+ * @func: A function pointer to the corresponding handling function.
+ *
+ */
+struct case_fmt
+{
+	char ch;
+	int (*func)(va_list);
+};
 
+typedef struct case_fmt fmt;
 
 
 

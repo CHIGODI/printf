@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_percent - function handling %% case
- * @va_list: list of arguments
+ * @args: list of arguments
  *
  * Return: number of character printed whilist printing
  *

@@ -1,20 +1,30 @@
 #include "main.h"
+/**
+ * reverse - reverses string
+ * @str: string to be reversed
+ * @length: length
+ *
+ */
 static void reverse(char *str, int length)
 {
 	int start = 0;
 	int end = length - 1;
+	char temp;
+
 	while (start < end)
 	{
-	    char temp = str[start];
-	    str[start] = str[end];
-	    str[end] = temp;
-	    start++;
-	    end--;
+		temp = str[start];
+
+		str[start] = str[end];
+		str[end] = temp;
+		start++;
+		end--;
 	}
 }
 
 /**
- * itoa - Converts an integer to a string representation with the specified base.
+ * itoa - Converts an integer to a string representation with the
+ *        specified base.
  * @num: The integer to be converted.
  * @str: A buffer to store the resulting string.
  * @base: The numeric base for the conversion
@@ -26,7 +36,7 @@ void itoa(int num, char *str, int base)
 	int i = 0, rem;
 	bool isNegative = false;
 
-        if (num == 0)
+	if (num == 0)
 	{
 		str[i++] = '0';
 		str[i] = '\0';
@@ -39,7 +49,7 @@ void itoa(int num, char *str, int base)
 		num = -num;
 	}
 
-        while (num != 0)
+	while (num != 0)
 	{
 		rem = num % base;
 		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
@@ -93,5 +103,5 @@ int print_int(va_list args)
 		return (chars_written);
 	}
 
-	return -1;
+	return (-1);
 }
