@@ -67,7 +67,7 @@ int print_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
-	int temp = num;
+	int temp = num, chars_written;
 	char *str;
 
 	while (temp != 0)
@@ -85,7 +85,7 @@ int print_int(va_list args)
 		itoa(num, str, 10);
 
 		/* Write the string to the standard output*/
-		int chars_written = write(1, str, strlen(str));
+		chars_written = write(1, str, strlen(str));
 
 		/* Free the allocated memory*/
 		free(str);

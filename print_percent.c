@@ -8,5 +8,6 @@
  */
 int print_percent(va_list args)
 {
+	va_arg(args, int);
 	return (write(1, "%%", 1));
 }

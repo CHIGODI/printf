@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0;
 	int printed_chars = 0;
+	int (*printer)(va_list);
 
 	va_start(args, format);
 
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
-			int (*printer)(va_list) = format_handler(format, &i);
+			printer = format_handler(format, &i);
 			if (printer)
 			{
 				printed_chars += printer(args);
