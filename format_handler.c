@@ -12,7 +12,7 @@ int (*format_handler(const char *format, int *int_ptr))(va_list)
 	int i = 0;
 	fmt fmt_type[] = {
 		{'c', print_char}, {'s', print_string}, {'%', print_percent},
-		 {'d', print_int}, {'i', print_int},
+		 {'d', print_int}, {'i', print_int}, {'b', print_binary},
 		 {'\0', NULL}
 	};
 

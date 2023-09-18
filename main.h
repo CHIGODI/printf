@@ -42,4 +42,8 @@ int print_pointer(va_list args);
 int print_non_printable(va_list args);
 int print_reverse(va_list args);
 
+/*helper functions */
+void reverse(char *s);
+
+
 #endif
