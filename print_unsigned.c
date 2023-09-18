@@ -40,38 +40,33 @@ void itoa_unsigned(unsigned int num, char *str, int base)
 int print_unsigned(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	int char_count = 0;
+	int char_count = 0, digit_count;
+	unsigned int temp;
+	char *str;
 
 	if (num == 0)
 	{
 		char_count += write(1, "0", 1);
 	}
-	else
+
+	digit_count = 0;
+	temp = num;
+
+	while (temp != 0)
 	{
-		int digit_count = 0;
-		unsigned int temp = num;
-
-		while (temp != 0)
-		{
-			temp /= 10;
-			digit_count++;
-		}
-		while (digit_count > 0)
-		{
-			unsigned int divisor = 1;
-			int i;
-
-			for (i = 1; i < digit_count; i++)
-			{
-				divisor *= 10;
-			}
-
-			char digit = '0' + (num / divisor);
-
-			char_count += write(1, &digit, 1);
-			num %= divisor;
-			digit_count--;
-		}
+		temp /= 10;
+		digit_count++;
 	}
+	str = malloc((sizeof(char) * digit_count) + 1);
+
+	if (str == NULL)
+	{
+		return (-1);
+	}
+
+	itoa_unsigned(num, str, 10);
+	char_count = strlen(str);
+	write(1, str, char_count);
+	free(str);
 	return (char_count);
 }
