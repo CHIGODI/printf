@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * itoa_unsigned - Converts an unsigned integer to a
+ * itoa_unsign - Converts an unsigned integer to a
  * string representation with the specified base
  * @num: The unsigned integer to be converted.
  * @str: A buffer to store the resulting string.
@@ -9,9 +9,10 @@
  *
  * Return: Void
  */
-void itoa_unsigned(unsigned int num, char *str, int base)
+void itoa_unsign(unsigned int num, char *str, int base)
 {
 	int i = 0;
+	unsigned int rem;
 
 	if (num == 0)
 	{
@@ -22,7 +23,7 @@ void itoa_unsigned(unsigned int num, char *str, int base)
 
 	while (num != 0)
 	{
-		int rem = num % base;
+		rem = num % base;
 
 		str[i++] = rem + '0';
 		num /= base;
@@ -64,7 +65,7 @@ int print_unsigned(va_list args)
 		return (-1);
 	}
 
-	itoa_unsigned(num, str, 10);
+	itoa_unsign(num, str, 10);
 	char_count = strlen(str);
 	write(1, str, char_count);
 	free(str);

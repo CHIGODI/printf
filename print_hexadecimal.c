@@ -8,14 +8,14 @@
  */
 int print_hexadecimal(va_list args)
 {
-	long unsigned int num = va_arg(args, long unsigned int);
+	unsigned long int num = va_arg(args, unsigned long int);
 	char hex_digits[] = "0123456789abcdef", *hex_str;
 	int char_count, digit_count, i;
-	long unsigned int temp;
+	unsigned long int temp;
 
 	if (num == 0)
 	{
-		write(1, "0", 1); 
+		write(1, "0", 1);
 		return (1);
 	}
 	temp = num;

@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * itoo - Converts an integer to a string representation with the specified base
+ * itoo - Converts an integer to a string representation with
+ * the specified base
  * @num: The integer to be converted.
  * @str: A buffer to store the resulting string.
- * @base: The numeric base for the conversion
  *
  * Return: Void
  */
@@ -35,7 +35,6 @@ int itoo(unsigned int num, char *str)
  *
  * Return: The number of characters printed
  *
- * Description: This function prints an unsigned integer as an octal number.
  */
 int print_octal(va_list args)
 {
