@@ -7,9 +7,11 @@
  * Return: Void
  *
  */
-void itob(int num, char *str)
+void itob(unsigned int num, char *str)
 {
-	int i = 0, bit;
+	int i = 0, 
+	
+	unsigned int bit;
 
 	if (num == 0)
 	{
@@ -40,8 +42,8 @@ void itob(int num, char *str)
 int print_binary(va_list args)
 {
 	int count = 0;
-	int num = va_arg(args, unsigned int);
-	int temp = num;
+	unsigned int num = va_arg(args, unsigned int);
+	unsigned int temp = num;
 	char *str;
 
 	/*calculate number of binary digits needed*/
