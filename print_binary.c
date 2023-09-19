@@ -9,9 +9,7 @@
  */
 void itob(unsigned int num, char *str)
 {
-	int i = 0, 
-	
-	unsigned int bit;
+	int i = 0, bit;
 
 	if (num == 0)
 	{
