@@ -9,30 +9,31 @@
  */
 void itob(int num, char *str)
 {
-	int i = 0, bit;
-	unsigned int abs_num;
+	int i = 0, temp;
+	bool isNegative;
 
-	if (num == INT_MIN)
-	{
-		abs_num = (unsigned int)INT_MAX + 1;
-		str[i++] = '1';
-	}
-	else
-	{
-		abs_num = (num < 0) ? -num : num;
-	}
-	if (abs_num == 0)
+	if (num == 0)
 	{
 		str[i++] = '0';
+		str[i] = '\0';
+		return;
 	}
-	else
+	isNegative = false;
+
+	if (num < 0)
 	{
-		while (abs_num != 0)
-		{
-			bit = abs_num % 2;
-			str[i++] = bit + '0';
-			abs_num /= 2;
-		}
+		isNegative = true;
+		num = -num;
+	}
+	while (num != 0)
+	{
+		temp = num % 2;
+		str[i++] = temp + '0';
+		num /= 2;
+	}
+	if (isNegative)
+	{
+		str[i++] = '-';
 	}
 	str[i] = '\0';
 	reverse(str);
