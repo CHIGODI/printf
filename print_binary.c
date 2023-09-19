@@ -9,8 +9,7 @@
  */
 void itob(int num, char *str)
 {
-	int i = 0, temp;
-	bool isNegative;
+	int i = 0, bit;
 
 	if (num == 0)
 	{
@@ -18,26 +17,19 @@ void itob(int num, char *str)
 		str[i] = '\0';
 		return;
 	}
-	isNegative = false;
-
-	if (num < 0)
-	{
-		isNegative = true;
-		num = -num;
-	}
 	while (num != 0)
 	{
-		temp = num % 2;
-		str[i++] = temp + '0';
+		bit = num % 2;
+
+		str[i++] = bit + '0';
 		num /= 2;
-	}
-	if (isNegative)
-	{
-		str[i++] = '-';
 	}
 	str[i] = '\0';
 	reverse(str);
 }
+
+
+
 /**
  * print_binary - function to handle custome %b
  * @args: argments passed
@@ -48,8 +40,8 @@ void itob(int num, char *str)
 int print_binary(va_list args)
 {
 	int count = 0;
-	unsigned int num = va_arg(args, unsigned int);
-	unsigned int temp = num;
+	int num = va_arg(args, unsigned int);
+	int temp = num;
 	char *str;
 
 	/*calculate number of binary digits needed*/
