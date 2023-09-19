@@ -7,29 +7,36 @@
  * Return: Void
  *
  */
-void itob(unsigned int num, char *str)
+void itob(int num, char *str)
 {
 	int i = 0, bit;
+	unsigned int abs_num;
 
-	if (num == 0)
+	if (num == INT_MIN)
+	{
+		abs_num = (unsigned int)INT_MAX + 1;
+		str[i++] = '1';
+	}
+	else
+	{
+		abs_num = (num < 0) ? -num : num;
+	}
+	if (abs_num == 0)
 	{
 		str[i++] = '0';
-		str[i] = '\0';
-		return;
 	}
-	while (num != 0)
+	else
 	{
-		bit = num % 2;
-
-		str[i++] = bit + '0';
-		num /= 2;
+		while (abs_num != 0)
+		{
+			bit = abs_num % 2;
+			str[i++] = bit + '0';
+			abs_num /= 2;
+		}
 	}
 	str[i] = '\0';
 	reverse(str);
 }
-
-
-
 /**
  * print_binary - function to handle custome %b
  * @args: argments passed

@@ -16,7 +16,7 @@ int print_number(int n)
 		count += print_number(INT_MAX / 10);
 		_putchar(INT_MAX % 10 + 1 + '0');
 		count++;
-		return count;
+		return (count);
 	}
 	else if (n < 0)
 	{
