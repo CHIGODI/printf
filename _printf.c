@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * _printf - imulate printf
+ * _printf - emulate printf
  * @format: format specifier
  *
- * Return: NUmber of characters printed
+ * Return: Number of characters printed
  */
 
 int _printf(const char *format, ...)
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				printed_chars += write(1, "ERROR", 5);
+				return (0);
 			}
 		}
 		else
