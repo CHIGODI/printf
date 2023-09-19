@@ -27,7 +27,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				return (0);
+				i--;
+				printed_chars += write(1, &format[i], 1);
 			}
 		}
 		else
