@@ -44,6 +44,6 @@ int print_reverse(va_list args);
 
 /*helper functions */
 void reverse(char *s);
-
+int _putchar(char c);
 
 #endif
