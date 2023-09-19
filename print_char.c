@@ -7,7 +7,8 @@
  */
 int print_char(va_list args)
 {
-	char ch = va_arg(args, int);
+	int ch = va_arg(args, int);
+	unsigned char uch = (unsigned char) ch;
 
-	return (write(1, &ch, 1));
+	return (write(1, &uch, 1));
 }
