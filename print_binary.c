@@ -44,6 +44,8 @@ int print_binary(va_list args)
 	unsigned int temp = num;
 	char *str;
 
+	if (temp == 0)
+		count = 2;
 	/*calculate number of binary digits needed*/
 	while (temp != 0)
 	{
@@ -53,7 +55,11 @@ int print_binary(va_list args)
 
 	str = malloc((sizeof(char) * count) + 1);
 	itob(num, str);
-	if (str != NULL)
+	if (str == NULL)
+	{
+		return (-1);
+	}
+	else
 	{
 		write(1, str, strlen(str));
 		free(str);
