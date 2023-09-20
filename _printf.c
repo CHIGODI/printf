@@ -13,8 +13,10 @@ int _printf(const char *format, ...)
 	int printed_chars = 0;
 	int (*printer)(va_list);
 
+	if (format == NULL)
+		return (-1);
+	
 	va_start(args, format);
-
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
