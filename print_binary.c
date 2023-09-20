@@ -40,8 +40,8 @@ int print_binary(va_list args)
 
 	if (num == 0)
 	{
-		write(1, "00", 2);
-		return (2);
+		write(1, "0", 1);
+		return (1);
 	}
 	/*calculate number of binary digits needed*/
 	while (temp != 0)
