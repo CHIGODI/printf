@@ -10,12 +10,7 @@
 void itob(unsigned int num, char *str)
 {
 	int i = 0, bit;
-
-	if (num == 0)
-	{
-		str[i++] = '0';
-		str[i++] = '0';
-	}
+	
 	while (num != 0)
 	{
 		bit = num % 2;
@@ -43,8 +38,11 @@ int print_binary(va_list args)
 	unsigned int temp = num;
 	char *str;
 
-	if (temp == 0)
-		count = 2;
+	if (num == 0)
+	{
+		write(1, "00", 2);
+		return (2);
+	}
 	/*calculate number of binary digits needed*/
 	while (temp != 0)
 	{
@@ -64,5 +62,4 @@ int print_binary(va_list args)
 		free(str);
 		return (count);
 	}
-	return (-1);
 }
