@@ -52,6 +52,8 @@ int print_unsigned(va_list args)
 
 	digit_count = 0;
 	temp = num;
+	if (num == 0)
+		digit_count = 1;
 
 	while (temp != 0)
 	{
