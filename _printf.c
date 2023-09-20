@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int (*printer)(va_list);
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	va_start(args, format);
 	while (format[i] != '\0')
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
 		{
-			return (0);
+			return (-1);
 		}
 		else
 		{
