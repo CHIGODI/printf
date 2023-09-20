@@ -53,13 +53,13 @@ int print_binary(va_list args)
 	}
 
 	str = malloc((sizeof(char) * count) + 1);
-	itob(num, str);
 	if (str == NULL)
 	{
 		return (-1);
 	}
 	else
 	{
+		itob(num, str);
 		write(1, str, strlen(str));
 		free(str);
 		return (count);
