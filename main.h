@@ -39,8 +39,8 @@ int print_octal(va_list args);
 int print_hexadecimal(va_list args);
 int print_hexa_upper(va_list args);
 int print_pointer(va_list args);
-int print_non_printable(va_list args);
 int print_reverse(va_list args);
+int non_printable(va_list args);
 
 /*helper functions */
 void reverse(char *s);
