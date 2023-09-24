@@ -9,7 +9,7 @@
  *
  * Return: Void
  */
-void itoa_unsign(unsigned int num, char *str, int base)
+void itoa_unsign(unsigned int num, char *str)
 {
 	int i = 0;
 	unsigned int rem;
@@ -23,10 +23,10 @@ void itoa_unsign(unsigned int num, char *str, int base)
 
 	while (num != 0)
 	{
-		rem = num % base;
+		rem = num % 10;
 
 		str[i++] = rem + '0';
-		num /= base;
+		num /= 10;
 	}
 	str[i] = '\0';
 	reverse(str);
@@ -45,11 +45,6 @@ int print_unsigned(va_list args)
 	unsigned int temp;
 	char *str;
 
-	if (num == 0)
-	{
-		char_count += write(1, "0", 1);
-	}
-
 	digit_count = 0;
 	temp = num;
 
@@ -65,7 +60,7 @@ int print_unsigned(va_list args)
 		return (-1);
 	}
 
-	itoa_unsign(num, str, 10);
+	itoa_unsign(num, str);
 	char_count = strlen(str);
 	write(1, str, char_count);
 	free(str);

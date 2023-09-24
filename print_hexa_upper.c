@@ -7,10 +7,10 @@
  */
 int print_hexa_upper(va_list args)
 {
-	unsigned long int num = va_arg(args, unsigned long int);
+	unsigned int num = va_arg(args, unsigned int);
+	unsigned int temp;
 	char hex_digits[] = "0123456789ABCDEF", *HEX_str;
 	int char_count = 0, i,  digit_count;
-	unsigned long  int temp;
 
 	if (num == 0)
 	{

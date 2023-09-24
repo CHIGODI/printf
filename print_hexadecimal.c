@@ -8,10 +8,10 @@
  */
 int print_hexadecimal(va_list args)
 {
-	unsigned long int num = va_arg(args, unsigned long int);
+	unsigned int num = va_arg(args, unsigned int);
 	char hex_digits[] = "0123456789abcdef", *hex_str;
 	int char_count, digit_count, i;
-	unsigned long int temp;
+	unsigned int temp;
 
 	if (num == 0)
 	{
