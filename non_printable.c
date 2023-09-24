@@ -21,11 +21,12 @@ int non_printable(va_list args)
 		if (ch < 32 || ch >= 127)
 		{
 			_printf("\\x0%X", ch);
-			char_count = 4;
+			char_count += 4;
 		}
 		else
 		{
-			char_count += _putchar(ch);
+		        _putchar(ch);
+			char_count++;
 		}
 	}
 	return (char_count);
