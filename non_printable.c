@@ -11,7 +11,7 @@ int non_printable(va_list args)
 {
 	char *str = va_arg(args, char *);
 	unsigned char ch;
-	int i;
+	int i, char_count = 0;
 
 	if (str == NULL)
 		return (-1);
@@ -21,11 +21,12 @@ int non_printable(va_list args)
 		if (ch < 32 || ch >= 127)
 		{
 			_printf("\\x0%X", ch);
+			char_count = 5;
 		}
 		else
 		{
-			_putchar(ch);
+			char_count += _putchar(ch);
 		}
 	}
-	return (i);
+	return (char_count);
 }
